@@ -79,4 +79,4 @@ The log and note sections of `TODAY.md` capture the narrative that the workflow'
 | `templates/TODAY.template.md` | `TODAY.md` | Every morning |
 | `templates/WEEKLY.template.md` | `WEEKLY.md` (or date-stamped) | Once per week |
 
-Copy the template, fill in the placeholders, delete the placeholder tokens. Do not edit the templates themselves — they are the blank forms.
+Copy the template, fill in the placeholders, delete the placeholder tokens in your copy. Do not edit the templates themselves — they are the blank forms.

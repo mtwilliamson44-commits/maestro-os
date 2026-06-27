@@ -1,5 +1,3 @@
 # Maestro markdownlint configuration
-# MD001 disabled: templates intentionally use h1 → h3 (fill-in form structure)
 # MD013 disabled: prose documents are not hard-wrapped at 80 columns
-MD001: false
 MD013: false
