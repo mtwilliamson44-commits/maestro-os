@@ -17,13 +17,14 @@ Acme SaaS is a deliberately mundane fictional invoicing tool invented to show Ma
 ## How These Files Map to Maestro
 
 ```text
-templates/TODAY.template.md  →  TODAY.md        (daily rhythm)
+templates/TODAY.template.md  →  TODAY.md          (daily rhythm)
 workflow/00-discuss.md       ┐
 workflow/01-plan.md          │
-workflow/02-execute.md       ├→  PLAN.md         (five-stage workflow)
+workflow/02-execute.md       ├→  PLAN.md           (five-stage gsd-lite workflow)
 workflow/03-review.md        │
 workflow/04-verify.md        ┘
-docs/build-standard.md      →  project-intake.md (project structure)
+templates/project-intake/   →  project-intake.md  (project structure)
+docs/git-branch-workflow.md →  (build standard — branch, commit, release rules)
 ```
 
 The intake is a one-document summary of the six planning artifacts that any new project produces before execution begins. The TODAY snapshot shows how the daily rhythm template is used in practice. The PLAN shows a single feature moving through all five workflow stages.

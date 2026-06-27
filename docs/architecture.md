@@ -24,11 +24,11 @@ Rhythm → Workflow → Build Standard → Knowledge Loop
 
 Rhythm is the daily operating cadence. It answers the question: *when does work happen, and in what sequence?* A session begins with scoping and planning, moves into autonomous execution, and closes with a written summary and review. Without rhythm, even good workflow tools produce inconsistent output because the inputs — the goals and context — arrive inconsistently.
 
-See `daily-rhythm.md` for the session structure.
+See [`daily-rhythm.md`](daily-rhythm.md) for the session structure.
 
 ### 2. Workflow
 
-Workflow is the five-stage execution loop that governs any discrete piece of work:
+Workflow is the five-stage execution loop (called `gsd-lite`) that governs any discrete piece of work:
 
 | Stage | Purpose |
 | --- | --- |
@@ -44,7 +44,7 @@ Each stage is a prompt file. The `run.sh` orchestrator lists stages and prints a
 
 The build standard defines what "done" means at the code level: branch conventions, commit format, test requirements, lint and type-check gates. It is enforced by CI and by the review stage of the workflow. A change is not complete because the tasks are checked off — it is complete when it passes the build standard.
 
-See `git-branch-workflow.md` for the branching model.
+See [`git-branch-workflow.md`](git-branch-workflow.md) for the branching model.
 
 ### 4. Knowledge Loop
 

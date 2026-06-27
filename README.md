@@ -59,7 +59,7 @@ anchored to real goals instead of drifting into maintenance and reaction.
 
 ### 2. Workflow
 
-A five-stage execution loop for any discrete piece of work:
+A five-stage execution loop (called `gsd-lite`) for any discrete piece of work:
 
 | Stage | File | Purpose |
 | --- | --- | --- |
