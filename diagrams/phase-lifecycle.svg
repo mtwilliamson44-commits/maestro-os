@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 260" width="760" height="260" font-family="monospace, sans-serif">
+
+  <!-- Background -->
+  <rect width="760" height="260" fill="#fafafa" rx="8"/>
+
+  <!-- Title -->
+  <text x="380" y="32" text-anchor="middle" font-size="15" font-weight="bold" fill="#111">Phase Lifecycle — Branch Flow</text>
+
+  <!-- ============================================================ -->
+  <!-- Stage boxes (left to right) -->
+  <!-- ============================================================ -->
+
+  <!-- feature/* -->
+  <rect x="30" y="80" width="140" height="70" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="100" y="108" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e3a8a">feature/*</text>
+  <text x="100" y="126" text-anchor="middle" font-size="10" fill="#1e40af">implementation</text>
+  <text x="100" y="141" text-anchor="middle" font-size="10" fill="#1e40af">atomic commits</text>
+
+  <!-- dev -->
+  <rect x="220" y="80" width="140" height="70" rx="6" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+  <text x="290" y="108" text-anchor="middle" font-size="13" font-weight="bold" fill="#14532d">dev</text>
+  <text x="290" y="126" text-anchor="middle" font-size="10" fill="#166534">integration</text>
+  <text x="290" y="141" text-anchor="middle" font-size="10" fill="#166534">CI runs here</text>
+
+  <!-- staging -->
+  <rect x="410" y="80" width="140" height="70" rx="6" fill="#fef9c3" stroke="#eab308" stroke-width="2"/>
+  <text x="480" y="108" text-anchor="middle" font-size="13" font-weight="bold" fill="#713f12">staging</text>
+  <text x="480" y="126" text-anchor="middle" font-size="10" fill="#854d0e">pre-production</text>
+  <text x="480" y="141" text-anchor="middle" font-size="10" fill="#854d0e">UAT gate here</text>
+
+  <!-- main -->
+  <rect x="600" y="80" width="130" height="70" rx="6" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
+  <text x="665" y="108" text-anchor="middle" font-size="13" font-weight="bold" fill="#831843">main</text>
+  <text x="665" y="126" text-anchor="middle" font-size="10" fill="#9d174d">production</text>
+  <text x="665" y="141" text-anchor="middle" font-size="10" fill="#9d174d">protected branch</text>
+
+  <!-- ============================================================ -->
+  <!-- Flow arrows between stages -->
+  <!-- ============================================================ -->
+
+  <!-- feature → dev -->
+  <line x1="170" y1="115" x2="218" y2="115" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- dev → staging -->
+  <line x1="360" y1="115" x2="408" y2="115" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- staging → main (above the UAT gate label) -->
+  <line x1="550" y1="115" x2="598" y2="115" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ============================================================ -->
+  <!-- UAT human gate indicator (below the staging→main arrow) -->
+  <!-- ============================================================ -->
+  <rect x="548" y="168" width="102" height="36" rx="4" fill="#fff7ed" stroke="#f97316" stroke-width="1.5"/>
+  <text x="599" y="183" text-anchor="middle" font-size="11" font-weight="bold" fill="#7c2d12">Human UAT</text>
+  <text x="599" y="197" text-anchor="middle" font-size="10" fill="#7c2d12">gate · required</text>
+
+  <!-- Connector: gate sits between staging and main -->
+  <line x1="599" y1="168" x2="599" y2="152" stroke="#f97316" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arr-orange)"/>
+
+  <!-- ============================================================ -->
+  <!-- Labels below boxes -->
+  <!-- ============================================================ -->
+  <text x="100" y="168" text-anchor="middle" font-size="10" fill="#888">short-lived</text>
+  <text x="290" y="168" text-anchor="middle" font-size="10" fill="#888">always-green</text>
+  <text x="480" y="168" text-anchor="middle" font-size="10" fill="#888">mirrors prod</text>
+  <text x="665" y="168" text-anchor="middle" font-size="10" fill="#888">ships to users</text>
+
+  <!-- ============================================================ -->
+  <!-- Legend / footer -->
+  <!-- ============================================================ -->
+  <text x="380" y="230" text-anchor="middle" font-size="10" fill="#888">Solid arrows = merge flow · Dashed orange = UAT approval checkpoint before merge to main</text>
+
+  <!-- ============================================================ -->
+  <!-- Arrow marker definitions -->
+  <!-- ============================================================ -->
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L8,3.5 Z" fill="#555"/>
+    </marker>
+    <marker id="arr-orange" markerWidth="8" markerHeight="8" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L8,3.5 Z" fill="#f97316"/>
+    </marker>
+  </defs>
+
+</svg>

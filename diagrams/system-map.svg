@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" width="760" height="500" font-family="monospace, sans-serif">
+
+  <!-- Background -->
+  <rect width="760" height="500" fill="#fafafa" rx="8"/>
+
+  <!-- Title -->
+  <text x="380" y="36" text-anchor="middle" font-size="16" font-weight="bold" fill="#111">Maestro — System Map</text>
+
+  <!-- ============================================================ -->
+  <!-- Subsystem boxes (arranged in a loop: top-left → top-right → bottom-right → bottom-left) -->
+  <!-- ============================================================ -->
+
+  <!-- 1. Daily Rhythm (top-left) -->
+  <rect x="60" y="80" width="200" height="80" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="160" y="112" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e3a8a">Daily Rhythm</text>
+  <text x="160" y="130" text-anchor="middle" font-size="11" fill="#1e3a8a">Scope → Execute → Review</text>
+  <text x="160" y="146" text-anchor="middle" font-size="10" fill="#3b6fd4">cadence / session structure</text>
+
+  <!-- 2. Workflow / gsd-lite (top-right) -->
+  <rect x="500" y="80" width="200" height="80" rx="6" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+  <text x="600" y="112" text-anchor="middle" font-size="13" font-weight="bold" fill="#14532d">Workflow</text>
+  <text x="600" y="130" text-anchor="middle" font-size="11" fill="#14532d">Discuss→Plan→Execute</text>
+  <text x="600" y="146" text-anchor="middle" font-size="10" fill="#16a34a">five-stage prompt loop</text>
+
+  <!-- 3. Build Standard (bottom-right) -->
+  <rect x="500" y="340" width="200" height="80" rx="6" fill="#fef9c3" stroke="#eab308" stroke-width="2"/>
+  <text x="600" y="372" text-anchor="middle" font-size="13" font-weight="bold" fill="#713f12">Build Standard</text>
+  <text x="600" y="390" text-anchor="middle" font-size="11" fill="#713f12">Branch · Commit · CI</text>
+  <text x="600" y="406" text-anchor="middle" font-size="10" fill="#a16207">definition of done</text>
+
+  <!-- 4. Knowledge Loop (bottom-left) -->
+  <rect x="60" y="340" width="200" height="80" rx="6" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
+  <text x="160" y="372" text-anchor="middle" font-size="13" font-weight="bold" fill="#831843">Knowledge Loop</text>
+  <text x="160" y="390" text-anchor="middle" font-size="11" fill="#831843">Templates · Examples</text>
+  <text x="160" y="406" text-anchor="middle" font-size="10" fill="#be185d">captured patterns → future sessions</text>
+
+  <!-- ============================================================ -->
+  <!-- Arrows forming the outer loop -->
+  <!-- ============================================================ -->
+
+  <!-- Rhythm → Workflow (top, left-to-right) -->
+  <line x1="260" y1="120" x2="498" y2="120" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Workflow → Build Standard (right, top-to-bottom) -->
+  <line x1="600" y1="160" x2="600" y2="338" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Build Standard → Knowledge Loop (bottom, right-to-left) -->
+  <line x1="500" y1="380" x2="262" y2="380" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Knowledge Loop → Rhythm (left, bottom-to-top) -->
+  <line x1="160" y1="340" x2="160" y2="162" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ============================================================ -->
+  <!-- Quality gates (center area) -->
+  <!-- ============================================================ -->
+
+  <!-- Review gate box -->
+  <rect x="300" y="178" width="160" height="52" rx="5" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
+  <text x="380" y="198" text-anchor="middle" font-size="12" font-weight="bold" fill="#7c2d12">Review Gate</text>
+  <text x="380" y="214" text-anchor="middle" font-size="10" fill="#7c2d12">03-review · correctness</text>
+  <text x="380" y="228" text-anchor="middle" font-size="10" fill="#7c2d12">CRITICAL / MAJOR / MINOR</text>
+
+  <!-- Verify gate box -->
+  <rect x="300" y="270" width="160" height="52" rx="5" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text x="380" y="290" text-anchor="middle" font-size="12" font-weight="bold" fill="#14532d">Verify Gate</text>
+  <text x="380" y="306" text-anchor="middle" font-size="10" fill="#14532d">04-verify · goal achieved</text>
+  <text x="380" y="320" text-anchor="middle" font-size="10" fill="#14532d">happy path + edge cases</text>
+
+  <!-- Arrow between the two gates -->
+  <line x1="380" y1="230" x2="380" y2="268" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Connector: Workflow feeds into Review gate -->
+  <line x1="500" y1="204" x2="462" y2="204" stroke="#f97316" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-orange)"/>
+
+  <!-- Connector: Verify gate feeds into Build Standard -->
+  <line x1="462" y1="296" x2="498" y2="340" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-green)"/>
+
+  <!-- ============================================================ -->
+  <!-- Legend -->
+  <!-- ============================================================ -->
+  <text x="380" y="464" text-anchor="middle" font-size="10" fill="#888">Solid arrows = loop flow · Dashed arrows = quality gate checkpoints</text>
+
+  <!-- ============================================================ -->
+  <!-- Arrow marker definitions -->
+  <!-- ============================================================ -->
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L8,3.5 Z" fill="#555"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="8" markerHeight="8" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L8,3.5 Z" fill="#f97316"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L8,3.5 Z" fill="#16a34a"/>
+    </marker>
+  </defs>
+
+</svg>

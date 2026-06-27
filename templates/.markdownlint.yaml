@@ -1,0 +1,4 @@
+# Template-scoped markdownlint configuration
+# MD001 disabled: templates intentionally use h1 → h3 (fill-in form structure);
+# the heading increment jump is by design and should not be flagged here.
+MD001: false

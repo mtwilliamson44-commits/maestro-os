@@ -1,0 +1,3 @@
+# Maestro markdownlint configuration
+# MD013 disabled: prose documents are not hard-wrapped at 80 columns
+MD013: false
