@@ -66,7 +66,9 @@ Both gates are required. A change that passes review but fails verify has techni
 
 ## Diagram
 
-A visual map of the full system is at `diagrams/system-map.svg`.
+![Maestro system map](../diagrams/system-map.svg)
+
+![Phase lifecycle](../diagrams/phase-lifecycle.svg)
 
 ---
 
