@@ -1,3 +1,4 @@
+<!-- markdownlint-disable-file MD041 -->
 <!-- TODO: replace OWNER with the GitHub owner at publish -->
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![CI](https://img.shields.io/github/actions/workflow/status/OWNER/maestro/ci.yml?branch=main&label=CI)](https://github.com/OWNER/maestro/actions)
@@ -147,5 +148,8 @@ going beyond the generic core.
 
 ## Author
 
-Built by [Mitchell Atiba](AUTHOR.md) — solo founder, systems thinker, AI
-orchestrator.
+Built by **[Mitchell Atiba](AUTHOR.md)** — solo founder, systems thinker, AI orchestrator. See [AUTHOR.md](AUTHOR.md).
+
+## License
+
+MIT — see [LICENSE](LICENSE).
