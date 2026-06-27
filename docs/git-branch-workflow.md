@@ -74,6 +74,9 @@ git rebase origin/dev
 - At least one peer review approval is required before merging.
 - All CI checks (lint, type-check, unit tests) must pass.
 - Merge strategy: **squash merge** — one commit per feature on `dev`.
+  Feature, fix, and chore PRs into `dev` use squash merge; branch
+  promotions (dev → staging, staging → main) and hotfix merges use `--no-ff`
+  merge commits to preserve history.
 
 ### 3.4 Integration Testing on `dev`
 
@@ -162,7 +165,9 @@ git commit -m "fix: resolve critical issue in production"
 git push origin hotfix/critical-issue
 ```
 
-Open a PR directly against `main`. After review and CI pass:
+Open a PR directly against `main`. A hotfix PR into `main` still requires at
+least one peer approval and CI pass — do not skip review under pressure. After
+review and CI pass:
 
 ```bash
 git checkout main
@@ -372,6 +377,7 @@ git push
 
 # staging to main + tag
 git checkout main
+git pull origin main
 git merge --no-ff staging -m "chore: promote staging to main vX.Y.Z"
 git tag -a vX.Y.Z -m "Release vX.Y.Z"
 git push origin main --tags
