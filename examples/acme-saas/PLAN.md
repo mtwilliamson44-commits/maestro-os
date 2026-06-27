@@ -29,7 +29,7 @@ This plan follows the five stages of the Maestro gsd-lite workflow: Discuss → 
 
 ## Stage 01 — Plan
 
-## Plan
+### Tasks
 
 1. Install `@react-pdf/renderer` — done when: package is in `package.json`, TypeScript types resolve, `next build` passes.
 2. Create `InvoicePDF` React component (`src/components/invoice-pdf.tsx`) — done when: component renders a valid PDF with invoice number, client name, line items, subtotal, tax, and total using mock data.
@@ -42,7 +42,7 @@ This plan follows the five stages of the Maestro gsd-lite workflow: Discuss → 
 
 - Task 3 touches `invoices` table (writes `pdf_url`). Confirm schema migration is included. ✓ Confirmed.
 
-## Verify
+### Success Criterion
 
 A user can open any saved invoice, click "Download PDF," and receive a correctly formatted PDF within 3 seconds — with their invoice number, client details, all line items, and the correct total.
 
@@ -65,18 +65,18 @@ A user can open any saved invoice, click "Download PDF," and receive a correctly
 
 ## Stage 03 — Review
 
-## Review Findings
+### Review Findings
 
 - [MINOR] `src/components/invoice-pdf.tsx:47` — `tax_rate` multiplied inline without rounding. If `tax_rate * subtotal` produces a fractional cent, the displayed total can drift by $0.01. Fix: round to nearest integer (cents) before display.
 - [MINOR] `src/app/api/invoices/[id]/pdf/route.ts:31` — no explicit error logged when Blob upload fails. Silent failure returns a 500 with no context in logs. Fix: add `console.error` with the caught error before rethrowing.
 - [SUGGESTION] The `InvoicePDF` component accepts raw invoice data as props. A thin adapter function that maps the Prisma model to PDF props would make the component easier to test in isolation.
 
-## Suggested Follow-ups (out of scope, log for later)
+### Suggested Follow-ups (out of scope, log for later)
 
 - Cache the generated PDF and serve the stored URL without regenerating on every request (current behavior regenerates on every GET if `pdf_url` is null, but does not invalidate when the invoice is edited).
 - User-uploaded logo in PDF (requires Settings feature to be built first).
 
-## Review Verdict
+### Review Verdict
 
 REQUEST_CHANGES — fix the two MINOR findings before merge; SUGGESTION deferred.
 
@@ -84,7 +84,7 @@ REQUEST_CHANGES — fix the two MINOR findings before merge; SUGGESTION deferred
 
 ## Stage 04 — Verify
 
-## Verification
+### Verification
 
 - **Goal:** A user can download a correctly formatted PDF of any saved invoice within 3 seconds.
 - **Happy path:** PASS — Created a 5-line-item invoice, clicked "Download PDF," received PDF in 1.3 s. Invoice number, client name, line items, tax row, and total all correct.
@@ -92,6 +92,6 @@ REQUEST_CHANGES — fix the two MINOR findings before merge; SUGGESTION deferred
 - **Edge case (unauthenticated request):** PASS — Route returns 401; no PDF generated.
 - **Edge case (invoice belonging to a different user):** PASS — Route returns 404 (not 403 — does not leak existence).
 
-## Verify Verdict
+### Verify Verdict
 
 PASS — Goal achieved. Both MINOR findings from Review are fixed and confirmed in the final diff. Feature is ready to merge.
