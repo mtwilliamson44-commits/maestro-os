@@ -1,0 +1,20 @@
+name: ci
+on:
+  push:
+    branches: [dev, staging, main]
+  pull_request:
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Markdown lint
+        run: npx --yes markdownlint-cli2 "**/*.md"
+      - name: Link check
+        run: npx --yes markdown-link-check README.md knowledge/INDEX.md
+      - name: Shellcheck
+        run: |
+          sudo apt-get update && sudo apt-get install -y shellcheck
+          shellcheck workflow/run.sh scripts/sanitization-check.sh
+      - name: Sanitization gate
+        run: ./scripts/sanitization-check.sh
