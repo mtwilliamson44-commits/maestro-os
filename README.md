@@ -1,7 +1,6 @@
 <!-- markdownlint-disable-file MD041 -->
-<!-- TODO: replace OWNER with the GitHub owner at publish -->
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![CI](https://img.shields.io/github/actions/workflow/status/OWNER/maestro/ci.yml?branch=main&label=CI)](https://github.com/OWNER/maestro/actions)
+[![CI](https://img.shields.io/github/actions/workflow/status/mtwilliamson44-commits/maestro-os/ci.yml?branch=main&label=CI)](https://github.com/mtwilliamson44-commits/maestro-os/actions)
 
 # Maestro
 
