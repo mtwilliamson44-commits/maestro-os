@@ -56,6 +56,12 @@ The weekly review covers:
 
 The weekly review feeds directly into the next Monday's morning brief. Reading last week's review before writing Monday's brief takes two minutes and prevents drift.
 
+Alongside the weekly review, run the [brief ritual](brief-ritual.md): a short audit that closes, moves or cancels every commitment whose date has passed, and ends with a This-week Top 10 that each day's Top 3 is picked from.
+
+### When You Step Away
+
+Time away from the desk breaks the loop more than anything else. Use the [leaving and returning rituals](leaving-and-returning.md): a handoff file on the way out, and one named next action on the way back.
+
 ---
 
 ## How It Composes with the Workflow

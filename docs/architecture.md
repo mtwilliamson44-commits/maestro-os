@@ -52,6 +52,23 @@ The knowledge loop captures what is learned in each session and makes it availab
 
 ---
 
+## Operating Methods Around the Loop
+
+The four subsystems cover how work moves. A set of operating methods covers
+everything around it, and each attaches to one subsystem:
+
+| Method | Attaches to | Role |
+| --- | --- | --- |
+| [Advisory board](advisory-board.md) | Rhythm | Scheduled role-based reviews read live state and feed the daily brief |
+| [Brief ritual](brief-ritual.md) | Rhythm | Weekly audit that keeps the calendar under the rhythm honest |
+| [Leaving and returning](leaving-and-returning.md) | Rhythm | Handoff on the way out, one next action on the way back |
+| [Build process](build-process.md) | Workflow | How the Execute and Review stages run when agents can dispatch agents |
+| [Security and privacy at genesis](security-privacy-at-genesis.md) | Build Standard | Genesis artifact, controls library, tiered gates, the Secure step |
+| [Decision rules](decision-rules.md) | Operator | What gets time, and what the AI may decide alone |
+| [Negotiation](negotiation.md) | Operator | Paper before building |
+
+---
+
 ## Quality Gates
 
 The workflow has two explicit quality gates before a change is considered done:
@@ -59,6 +76,8 @@ The workflow has two explicit quality gates before a change is considered done:
 **Review gate (`03-review`):** Runs after execution, before merge. Checks for correctness bugs, silent failures, and unnecessary complexity. Classified findings (CRITICAL, MAJOR, MINOR) must be resolved before the gate passes. This gate is code-level.
 
 **Verify gate (`04-verify`):** Runs after review passes. Checks that the original goal — stated in the Discuss stage — is actually achieved. Happy path and at least one edge case must pass. This gate is goal-level.
+
+**Secure step:** Between review and verify, the diff is checked against the project's threat model. Phases that touch a catastrophic surface — personal data storage or export, auth, payments, live financial execution — are hard-blocked until the project's `SECURITY-PRIVACY.md` covers them. See [`security-privacy-at-genesis.md`](security-privacy-at-genesis.md).
 
 Both gates are required. A change that passes review but fails verify has technically correct code that does not deliver the expected outcome. A change that passes verify but skips review may deliver the outcome once, but with hidden fragility that breaks under load or future changes.
 

@@ -118,6 +118,22 @@ more reliable.
 
 ---
 
+## The Operating Methods in Practice
+
+The methods documented alongside the core loop run on the same toolchain:
+
+| Method | Generic Form | How It Runs in Practice |
+| --- | --- | --- |
+| [Advisory board](advisory-board.md) | Role prompts in `templates/BOARD_ROLES.template.md` | A scheduler runs a wrapper script each morning; each role is a headless Claude Code call (`claude --print`) whose output is written atomically to a report file. The Hygiene role is a plain script with no model call. A chat-app notification carries subject lines only. |
+| [Brief ritual](brief-ritual.md) | The sequence in the doc | A Claude Code skill that generates the agenda from the calendar file, collects decisions, and applies them through a single calendar-writer script as one batch |
+| [Leaving and returning](leaving-and-returning.md) | `templates/HANDOFF.template.md` | A pair of skills that call GSD's pause and resume steps per project and overwrite one handoff file |
+| [Build process](build-process.md) | The sequence in the doc | superpowers `subagent-driven-development`, with the final review on the most capable available model |
+| [Security and privacy at genesis](security-privacy-at-genesis.md) | `SECURITY-PRIVACY` and `CONTROLS` templates | Scaffolded as a step of the new-project checklist; the Secure step runs as a dedicated security phase |
+| [Negotiation](negotiation.md) | `templates/NEGOTIATION_PLAN.template.md` | A skill with plan and debrief modes that pre-fills the template and drafts the confirmation note (draft only — it never sends) |
+| [Decision rules](decision-rules.md) | The rules in the doc | A global instruction file loaded into every session, plus named challenge and finish modes as skills |
+
+---
+
 ## Why the Generic Core Still Matters
 
 The generic Maestro core — the five prompt files, the templates, the bash
