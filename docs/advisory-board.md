@@ -124,9 +124,10 @@ The structural fix, which should be built in from the start:
 3. **Fail closed.** If the formatter cannot load, the rules that depend on it
    are withheld and a loud internal warning is raised. A missing safety layer
    must mean less output, never unfiltered output.
-4. **No figures in identifiers.** A pattern check cannot tell `invoice-2027-03`
-   from a disguised amount, so the convention is enforced where ids are
-   created: ids describe a category and a period, never a sum.
+4. **No figures in identifiers.** A pattern check cannot tell whether the
+   digits in `renewal-1200` are a period or a sum, so the convention is
+   enforced where ids are created: ids describe a category and a period,
+   never an amount.
 5. **Silence must be reachable.** Write a test proving the knock can be empty.
    A rule that always fires is both noise and an exposure.
 6. **Tests use synthetic values.** Never put the real sensitive strings into a
