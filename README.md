@@ -93,6 +93,23 @@ Templates, examples, and patterns extracted from real work accumulate in
 
 ---
 
+## Operating Methods
+
+The four subsystems run the loop. These methods run the business around it —
+each is a short doc, most with a fill-in template.
+
+| Method | Doc | Template | What it does |
+| --- | --- | --- | --- |
+| Advisory board | [`docs/advisory-board.md`](docs/advisory-board.md) | [`BOARD_ROLES`](templates/BOARD_ROLES.template.md) | Scheduled role-based reviews (COO, CMO, CTO, CEO, Advisor, Hygiene, Chief of Staff) that read live project state and write reports |
+| Brief ritual | [`docs/brief-ritual.md`](docs/brief-ritual.md) | — | Weekly calendar audit: every stale commitment decided, applied as one all-or-nothing batch, plus a This-week Top 10 |
+| Leaving and returning | [`docs/leaving-and-returning.md`](docs/leaving-and-returning.md) | [`HANDOFF`](templates/HANDOFF.template.md) | Two-minute rituals: write a handoff when you leave, get one next action when you return |
+| Build process | [`docs/build-process.md`](docs/build-process.md) | [`RULINGS_LEDGER`](templates/RULINGS_LEDGER.template.md) | Fresh implementer and independent reviewer per task, final whole-branch review, one fix wave, a ledger of rulings |
+| Security and privacy at genesis | [`docs/security-privacy-at-genesis.md`](docs/security-privacy-at-genesis.md) | [`SECURITY-PRIVACY`](templates/SECURITY-PRIVACY.template.md), [`CONTROLS`](templates/CONTROLS.template.md) | A data inventory before the first line of code, a shared controls library, tiered gates |
+| Negotiation | [`docs/negotiation.md`](docs/negotiation.md) | [`NEGOTIATION_PLAN`](templates/NEGOTIATION_PLAN.template.md) | A written plan before every deal, a debrief after, a confirmation note the same day |
+| Decision rules | [`docs/decision-rules.md`](docs/decision-rules.md) | — | Priority order, a four-test filter, hard stops, what the AI may decide alone, challenge and finish modes |
+
+---
+
 ## Quick Start
 
 ### Fork and Configure
@@ -125,6 +142,11 @@ order for every discrete piece of work.
   [`templates/TODAY.template.md`](templates/TODAY.template.md).
 - Run a weekly review with
   [`templates/WEEKLY.template.md`](templates/WEEKLY.template.md).
+- Start every new project's
+  [`SECURITY-PRIVACY.md`](templates/SECURITY-PRIVACY.template.md) at setup.
+- Write a [negotiation plan](templates/NEGOTIATION_PLAN.template.md) before
+  any deal, and a [handoff](templates/HANDOFF.template.md) before you leave
+  the desk.
 
 ### See It in Practice
 
