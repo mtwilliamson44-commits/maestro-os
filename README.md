@@ -107,6 +107,8 @@ each is a short doc, most with a fill-in template.
 | Security and privacy at genesis | [`docs/security-privacy-at-genesis.md`](docs/security-privacy-at-genesis.md) | [`SECURITY-PRIVACY`](templates/SECURITY-PRIVACY.template.md), [`CONTROLS`](templates/CONTROLS.template.md) | A data inventory before the first line of code, a shared controls library, tiered gates |
 | Negotiation | [`docs/negotiation.md`](docs/negotiation.md) | [`NEGOTIATION_PLAN`](templates/NEGOTIATION_PLAN.template.md) | A written plan before every deal, a debrief after, a confirmation note the same day |
 | Decision rules | [`docs/decision-rules.md`](docs/decision-rules.md) | — | Priority order, a four-test filter, hard stops, what the AI may decide alone, challenge and finish modes |
+| Working inside an employer | [`docs/working-inside-an-employer.md`](docs/working-inside-an-employer.md) | [`ROLE_PLAN`](templates/ROLE_PLAN.template.md), [`QUARTER_PLAN`](templates/QUARTER_PLAN.template.md), [`RESULTS_LOG`](templates/RESULTS_LOG.template.md), [`ONE_ON_ONE`](templates/ONE_ON_ONE.template.md) | Running Maestro in a job: the one-way rule, company accounts, and a role plan that grows from 90 days into quarterly and annual cycles |
+| Activation lifecycle | [`docs/activation-lifecycle.md`](docs/activation-lifecycle.md) | [`ACTIVATION_BRIEF`](templates/ACTIVATION_BRIEF.template.md), [`RUN_SHEET`](templates/RUN_SHEET.template.md), [`EVENT_REPORT`](templates/EVENT_REPORT.template.md) | Events and campaigns in five stages: brief, plan, run, report, learn — KPIs set before, measured after |
 
 ---
 
